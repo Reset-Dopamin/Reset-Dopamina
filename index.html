@@ -13,27 +13,28 @@
 <meta name="theme-color" content="#0a49ff">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%231a5cff' d='M16 2 30 16 16 30 2 16z'/%3E%3C/svg%3E">
 <style>
-@font-face{font-family:"Inter";src:url("https://rsms.me/inter/font-files/InterVariable.woff2") format("woff2");font-weight:100 900;font-display:swap}
 :root{--cy:#c1eeff;--line:rgba(193,238,255,.55);--glass:rgba(255,255,255,.14);--pad:clamp(20px,4.2vw,60px)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;background:#0a49ff;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #ffe657;outline-offset:3px;box-shadow:0 0 0 2px #061b56}
+.skip-link{position:fixed;z-index:1001;top:8px;left:8px;padding:12px 16px;border-radius:8px;background:#fff;color:#071d68;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
 .hero{position:relative;min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;padding:0 var(--pad);
-background:radial-gradient(90% 70% at 85% 0,#4b92ff 0,transparent 65%),linear-gradient(180deg,#0a45f5 0,#1778ff 55%,#52acff 100%)}
+background:linear-gradient(180deg,#0a45f5 0,#0b349e 55%,#071f65 100%)}
 .hero::before{content:"";position:absolute;left:-12%;bottom:-9%;width:75%;height:26%;z-index:0;filter:blur(22px);
 background:radial-gradient(closest-side at 25% 60%,rgba(255,255,255,.7),transparent),radial-gradient(closest-side at 62% 70%,rgba(255,255,255,.5),transparent),radial-gradient(closest-side at 88% 55%,rgba(255,255,255,.35),transparent)}
 #mass,#fly{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 #mass{z-index:1}#fly{z-index:2}
 header,.copy,.ids{position:relative;z-index:3}
-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:28px;min-height:76px}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:12px;padding:14px 18px;min-height:76px;border:1px solid rgba(255,255,255,.22);border-radius:16px;background:rgba(3,15,55,.94);backdrop-filter:blur(10px)}
 .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px;letter-spacing:-.01em}
 nav{display:flex;gap:clamp(16px,2.4vw,36px);font-size:15px}
-nav a{opacity:.92}nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+nav a{opacity:1}nav a:hover{text-decoration:underline;text-underline-offset:6px}
 .pill{height:48px;padding:0 24px;border-radius:99px;display:inline-flex;align-items:center;font:500 15px/1 Inter,system-ui,sans-serif;white-space:nowrap}
 .w{background:#fff;color:#0b2a99}.k{background:#0b0d14;color:#fff}
 .menu{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);color:#fff;align-items:center;justify-content:center;cursor:pointer}
-.copy{margin-top:10dvh;max-width:640px}
+.copy{margin-top:10dvh;margin-left:-16px;max-width:680px;padding:18px 22px;border:1px solid rgba(255,255,255,.2);border-radius:18px;background:rgba(3,15,55,.94);backdrop-filter:blur(10px)}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);border-radius:99px;font-size:13px}
 .badge i{width:6px;height:6px;border-radius:50%;background:var(--cy)}
 h1{margin:22px 0 20px;font-weight:400;font-size:clamp(38px,5vw,74px);line-height:1.03;letter-spacing:-.03em}
@@ -42,7 +43,7 @@ h1 span{display:block}
 .act{display:flex;gap:12px}
 .price{margin-top:16px;font-size:15px;color:var(--cy)}
 .price s{opacity:.75}.price b{color:#fff;font-weight:600}
-.ids{margin-top:28px;padding:0 0 max(32px,env(safe-area-inset-bottom));color:var(--cy)}
+.ids{margin-top:28px;padding:14px 14px max(24px,env(safe-area-inset-bottom));border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(3,15,55,.92);color:var(--cy)}
 .ids p{font-size:13px;margin-bottom:12px;opacity:.9}
 .ids ul{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:560px}
 .ids a{display:block;font-size:13px;text-shadow:0 1px 8px rgba(5,25,120,.5)}
@@ -111,6 +112,22 @@ html{scroll-behavior:smooth}
 .faq details p{padding:12px 28px 0 0}
 footer{padding:28px var(--pad);background:#082fae;color:var(--cy);font-size:13px;line-height:1.6}
 footer p{max-width:1000px}
+.legal-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:16px}
+.legal-links a,.legal-links button{text-decoration:underline;text-underline-offset:3px;color:#fff;font:inherit}
+.legal-links button{border:0;background:none;cursor:pointer}
+.cookie-banner{position:fixed;z-index:1000;left:16px;right:16px;bottom:16px;max-width:960px;margin:0 auto;padding:20px;border:1px solid rgba(255,255,255,.5);border-radius:16px;background:#061b56;color:#fff;box-shadow:0 16px 55px rgba(0,0,0,.45)}
+.cookie-banner[hidden],.cookie-settings[hidden]{display:none}
+.cookie-banner h2{font-size:20px;margin-bottom:8px}
+.cookie-banner p{max-width:800px;color:#fff;line-height:1.55;font-size:14px}
+.cookie-banner a{text-decoration:underline;text-underline-offset:3px}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cookie-actions button{min-height:44px;padding:10px 16px;border:1px solid #fff;border-radius:8px;background:#fff;color:#071d68;font:600 14px Inter,system-ui,sans-serif;cursor:pointer}
+.cookie-actions button.secondary{background:transparent;color:#fff}
+.cookie-settings{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.35)}
+.cookie-choice{display:flex;align-items:flex-start;gap:10px;padding:9px 0;color:#fff;font-size:14px;line-height:1.5}
+.cookie-choice input{width:20px;height:20px;flex:0 0 20px;margin-top:1px;accent-color:#ffe657}
+.cookie-choice small{display:block;color:#c1eeff}
+@media(max-width:820px){.copy{margin-left:0;padding:16px;border-radius:16px}.ids{margin-left:0;margin-right:0}}
 @media(max-width:520px){.phone{width:112px;height:214px}.open-book{height:145px}.book-page i{margin-top:19px}.book-page i+i{margin-top:9px}}
 @media(prefers-reduced-motion:reduce){.phone,.screen-off,.open-book,.page-turn{animation:none!important}.phone{display:none}.screen-off{opacity:0}.open-book{opacity:1;transform:none}.page-turn{display:none}}
 @media(max-width:820px),(max-aspect-ratio:1/1){
@@ -127,6 +144,7 @@ header{flex-wrap:wrap}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="m1" viewBox="0 0 24 24"><path d="M3 10 10 2 19 7 12 13 5 13ZM5 13 12 19 20 11 19 7M10 2 12 13"/></symbol>
 <symbol id="m2" viewBox="0 0 24 24"><path d="M2 7 8 2 14 2 8 7ZM5 13 11 8 20 8 14 13ZM9 20 15 14 21 14 15 20Z"/></symbol>
@@ -134,7 +152,7 @@ header{flex-wrap:wrap}
 <symbol id="m4" viewBox="0 0 24 24"><path d="M12 2 20 5 12 11ZM22 12 19 20 13 12ZM12 22 4 19 12 13ZM2 12 5 4 11 12Z"/></symbol>
 <symbol id="m5" viewBox="0 0 24 24"><path d="M12 3 21 12 12 21 3 12ZM12 8 16 12 12 16 8 12Z"/></symbol>
 </defs></svg>
-<main class="hero">
+<main class="hero" id="main-content">
 <svg id="mass" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMax slice" role="img" aria-label="Escultura densa de garças, leques e fitas de papel dobrado em tons de coral, laranja, amarelo e lavanda."></svg>
 <svg id="fly" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
 <header>
@@ -226,7 +244,35 @@ Seu navegador não conseguiu reproduzir o vídeo. Tente abrir esta página em ou
 <details><summary>Em quais dispositivos posso ler os ebooks?</summary><p>Verifique o formato dos arquivos e as instruções de leitura informadas na página de compra. Leitores de PDF e outros formatos podem variar conforme o material fornecido.</p></details>
 </div>
 </section>
-<footer><p>Conteúdo educativo sobre hábitos, foco e organização da rotina. Não constitui aconselhamento médico ou psicológico e não promete resultados específicos. Consulte a página de pagamento para conferir preço e condições atualizadas.</p></footer>
+<footer>
+<p>Conteúdo educativo sobre hábitos, foco e organização da rotina. Não constitui aconselhamento médico ou psicológico e não promete resultados específicos. Consulte a página de pagamento para conferir preço e condições atualizadas.</p>
+<div class="legal-links" aria-label="Informações e políticas">
+<a href="privacidade.html">Privacidade</a>
+<a href="termos.html">Termos e condições</a>
+<a href="reembolso.html">Reembolso</a>
+<a href="cookies.html">Cookies</a>
+<button type="button" id="reopen-consent">Gerenciar cookies</button>
+</div>
+</footer>
+<section class="cookie-banner" id="cookie-banner" role="region" aria-label="Preferências de privacidade">
+<h2>Suas preferências de privacidade</h2>
+<p>Este site não tem analytics, pixels ou anúncios ativos. Sua escolha fica salva neste navegador; leia a <a href="cookies.html">Política de Cookies</a> e a <a href="privacidade.html">Política de Privacidade</a>.</p>
+<div class="cookie-actions">
+<button type="button" id="cookie-accept">Aceitar opcionais</button>
+<button type="button" class="secondary" id="cookie-reject">Recusar opcionais</button>
+<button type="button" class="secondary" id="cookie-customize" aria-expanded="false" aria-controls="cookie-settings">Personalizar</button>
+</div>
+<div class="cookie-settings" id="cookie-settings" hidden>
+<p>Não há scripts opcionais instalados agora. Se forem adicionados futuramente, só serão carregados após a autorização da categoria correspondente.</p>
+<label class="cookie-choice" for="cookie-necessary"><input id="cookie-necessary" type="checkbox" checked disabled><span>Necessários<small>Guardar a escolha de privacidade neste navegador.</small></span></label>
+<label class="cookie-choice" for="cookie-analytics"><input id="cookie-analytics" type="checkbox"><span>Estatísticas<small>Permitir ferramentas opcionais de análise, se forem instaladas.</small></span></label>
+<label class="cookie-choice" for="cookie-marketing"><input id="cookie-marketing" type="checkbox"><span>Marketing<small>Permitir pixels ou scripts opcionais de publicidade, se forem instalados.</small></span></label>
+<div class="cookie-actions">
+<button type="button" id="cookie-save">Salvar minhas escolhas</button>
+<button type="button" class="secondary" id="cookie-cancel">Voltar</button>
+</div>
+</div>
+</section>
 <script>
 (()=>{
 const NS="http://www.w3.org/2000/svg",W=1920,H=1080;
@@ -266,8 +312,30 @@ g.setAttribute("transform",`translate(${x} ${y}) rotate(${a}) scale(${w/98})`);w
 if(matchMedia("(prefers-reduced-motion:reduce)").matches)draw(4);
 else{const L=n=>{draw(n/1000%12);requestAnimationFrame(L)};requestAnimationFrame(L)}
 const b=document.querySelector(".menu");
- document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menu')}));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menu')}));
 b.onclick=()=>{const o=document.body.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('open')){document.body.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menu');b.focus()}});
+})();
+</script>
+<script>
+(()=>{
+const key='resetDopaminaConsentV1',banner=document.getElementById('cookie-banner'),settings=document.getElementById('cookie-settings');
+const customize=document.getElementById('cookie-customize'),analytics=document.getElementById('cookie-analytics'),marketing=document.getElementById('cookie-marketing');
+const read=()=>{try{const p=JSON.parse(localStorage.getItem(key));return p&&p.necessary===true&&typeof p.analytics==='boolean'&&typeof p.marketing==='boolean'?p:null}catch{return null}};
+const loadApproved=category=>document.querySelectorAll('script[type="text/plain"][data-consent-category="'+category+'"][data-src]').forEach(placeholder=>{
+try{const src=new URL(placeholder.dataset.src,location.href);if(src.protocol!=='https:')return;const script=document.createElement('script');script.src=src.href;script.async=true;if(placeholder.dataset.integrity){script.integrity=placeholder.dataset.integrity;script.crossOrigin='anonymous'}placeholder.replaceWith(script)}catch{}
+});
+const enable=p=>{if(p.analytics)loadApproved('analytics');if(p.marketing)loadApproved('marketing')};
+const save=p=>{const old=read(),next={necessary:true,analytics:!!p.analytics,marketing:!!p.marketing};try{localStorage.setItem(key,JSON.stringify(next))}catch{}
+banner.hidden=true;settings.hidden=true;customize.setAttribute('aria-expanded','false');
+if(old&&((old.analytics&&!next.analytics)||(old.marketing&&!next.marketing))){location.reload();return}enable(next)};
+document.getElementById('cookie-accept').addEventListener('click',()=>save({analytics:true,marketing:true}));
+document.getElementById('cookie-reject').addEventListener('click',()=>save({analytics:false,marketing:false}));
+customize.addEventListener('click',()=>{settings.hidden=false;customize.setAttribute('aria-expanded','true');analytics.focus()});
+document.getElementById('cookie-save').addEventListener('click',()=>save({analytics:analytics.checked,marketing:marketing.checked}));
+document.getElementById('cookie-cancel').addEventListener('click',()=>{settings.hidden=true;customize.setAttribute('aria-expanded','false');customize.focus()});
+document.getElementById('reopen-consent').addEventListener('click',()=>{const p=read();analytics.checked=!!p?.analytics;marketing.checked=!!p?.marketing;banner.hidden=false;settings.hidden=true;customize.setAttribute('aria-expanded','false');document.getElementById('cookie-accept').focus()});
+const existing=read();if(existing){banner.hidden=true;analytics.checked=existing.analytics;marketing.checked=existing.marketing;enable(existing)}
 })();
 </script>
 </body>
