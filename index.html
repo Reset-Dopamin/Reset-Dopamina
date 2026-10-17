@@ -4,7 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Reset da Dopamina: recupere o foco em 7 dias</title>
-<meta name="description" content="Método de 7 dias com 5 ebooks para reduzir o scroll compulsivo, reconstruir o foco e criar disciplina sem depender de motivação.">
+<meta name="description" content="Método de 7 dias com 5 ebooks para reduzir o uso automático das redes, reconstruir o foco e criar uma rotina mais consistente.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reset da Dopamina — recupere o foco em 7 dias">
+<meta property="og:description" content="Um plano prático com 5 ebooks para reduzir o uso automático das redes e reconstruir sua rotina de foco.">
+<meta property="og:url" content="https://reset-dopamin.github.io/Reset-Dopamina/">
+<meta property="og:image" content="https://reset-dopamin.github.io/Reset-Dopamina/modulo1.jpg">
+<meta name="theme-color" content="#0a49ff">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%231a5cff' d='M16 2 30 16 16 30 2 16z'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:"Inter";src:url("https://rsms.me/inter/font-files/InterVariable.woff2") format("woff2");font-weight:100 900;font-display:swap}
@@ -55,6 +61,25 @@ html{scroll-behavior:smooth}
 .ebooks .act{margin-top:44px}
 .long{display:none}
 @media(min-width:821px){.long{display:inline}}
+.video-section,.how,.faq{padding:clamp(56px,8vw,100px) var(--pad)}
+.video-section{background:#0b3fe0}
+.video-wrap{max-width:960px;margin:28px auto 0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#07194f;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.video-wrap video{display:block;width:100%;max-height:72vh;background:#07194f}
+.video-note{max-width:960px;margin:12px auto 0;color:var(--cy);font-size:13px;line-height:1.5}
+.how{background:#0836c7}
+.how h2,.faq h2,.video-section h2{font-weight:400;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.1}
+.section-lead{margin:12px 0 32px;color:var(--cy);font-size:16px;line-height:1.6;max-width:680px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;max-width:1200px}
+.steps article{padding:22px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.08)}
+.steps h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.steps p,.faq details p{color:var(--cy);font-size:15px;line-height:1.6}
+.faq{background:#0b3fe0}
+.faq-list{max-width:850px;margin-top:28px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-size:17px;font-weight:500;line-height:1.45}
+.faq details p{padding:12px 28px 0 0}
+footer{padding:28px var(--pad);background:#082fae;color:var(--cy);font-size:13px;line-height:1.6}
+footer p{max-width:1000px}
 @media(max-width:820px),(max-aspect-ratio:1/1){
 .ids a{font-size:11px}.ids ul{gap:6px}
 nav,.hdr-cta{display:none}.menu{display:inline-flex}
@@ -88,7 +113,7 @@ header{flex-wrap:wrap}
 <section class="copy">
 <p class="badge"><i></i>Método de 7 dias com 5 ebooks</p>
 <h1><span>Recupere o Foco</span><span>que o Scroll</span><span>Roubou de Você</span></h1>
-<p class="desc">Um passo a passo para desintoxicar, reconstruir o foco e criar disciplina, sem depender de motivação.</p>
+<p class="desc">Um plano prático de 7 dias para reduzir o uso automático das redes, reconstruir o foco e criar uma rotina mais consistente.</p>
 <div class="act">
 <a class="pill w" href="https://pay.kiwify.com.br/eCQ6E96" target="_blank" rel="noopener">Quero o Reset<span class="long">&nbsp;por R$ 27,99</span></a>
 <a class="pill k" href="#ebooks">Ver conteúdo</a>
@@ -105,11 +130,32 @@ header{flex-wrap:wrap}
 </ul>
 </section>
 </main>
+<section class="video-section" aria-labelledby="video-title">
+<h2 id="video-title">Veja como funciona</h2>
+<p class="section-lead">Assista à apresentação e conheça a proposta do método antes de explorar os materiais.</p>
+<div class="video-wrap">
+<video controls preload="metadata" playsinline aria-label="Vídeo de apresentação do método Reset da Dopamina">
+<source src="apresentacao.mp4" type="video/mp4">
+Seu navegador não conseguiu reproduzir o vídeo. Tente abrir esta página em outro navegador.
+</video>
+</div>
+<p class="video-note">Para adicionar seu vídeo, envie o arquivo com o nome <strong>apresentacao.mp4</strong> para a mesma pasta deste arquivo index.html.</p>
+</section>
+<section class="how" aria-labelledby="how-title">
+<h2 id="how-title">Como funciona o método</h2>
+<p class="section-lead">A proposta combina uma etapa inicial de 7 dias com materiais para apoiar a continuidade dos hábitos. Use os ebooks na ordem sugerida e adapte as práticas à sua rotina.</p>
+<div class="steps">
+<article><h3>1. Comece pelo Reset</h3><p>Observe seus hábitos de uso e siga as práticas do ebook Reset da Dopamina ao longo de 7 dias.</p></article>
+<article><h3>2. Prepare o ambiente</h3><p>Use o material de Foco Profundo para organizar o ambiente e planejar blocos de concentração.</p></article>
+<article><h3>3. Crie constância</h3><p>Explore as estratégias de disciplina e sono para apoiar uma rotina mais consistente.</p></article>
+<article><h3>4. Mantenha o uso consciente</h3><p>Defina janelas de uso e faça revisões periódicas com o ebook Redes Sociais Sob Controle.</p></article>
+</div>
+</section>
 <section class="ebooks" id="ebooks">
 <h2>Os 5 ebooks do método</h2>
 <p class="sub">Siga a ordem: cada etapa prepara a próxima.</p>
 <div class="grid">
-<article id="reset"><img src="modulo1.jpg" alt="Capa do ebook Reset da Dopamina" loading="lazy"><h3>Reset da Dopamina</h3><p>7 dias para desintoxicar do scroll, reconstruir o foco e consolidar a rotina.</p></article>
+<article id="reset"><img src="modulo1.jpg" alt="Capa do ebook Reset da Dopamina" loading="lazy"><h3>Reset da Dopamina</h3><p>Práticas para observar seus hábitos digitais, reduzir o uso automático das redes e começar uma rotina de foco em 7 dias.</p></article>
 <article id="foco"><img src="modulo2.jpg" alt="Capa do ebook Foco Profundo" loading="lazy"><h3>Foco Profundo</h3><p>Ambiente de foco, 3 blocos diários de trabalho profundo e plano de 30, 60 e 90 dias.</p></article>
 <article id="disciplina"><img src="modulo4.jpg" alt="Capa do ebook Disciplina Sem Motivação" loading="lazy"><h3>Disciplina Sem Motivação</h3><p>Regra dos 2 minutos, microações e gatilhos de ação para agir sem esperar motivação.</p></article>
 <article id="sono"><img src="modulo3.jpg" alt="Capa do ebook Sono de Alta Performance" loading="lazy"><h3>Sono de Alta Performance</h3><p>Rotina noturna, horário certo da cafeína e uma manhã que ancora o relógio biológico.</p></article>
@@ -118,6 +164,17 @@ header{flex-wrap:wrap}
 <div class="act"><a class="pill w" href="https://pay.kiwify.com.br/eCQ6E96" target="_blank" rel="noopener">Quero o Reset por R$ 27,99</a></div>
 <p class="price"><s>De R$ 52,99</s> por <b>R$ 27,99</b></p>
 </section>
+<section class="faq" aria-labelledby="faq-title">
+<h2 id="faq-title">Perguntas frequentes</h2>
+<div class="faq-list">
+<details><summary>O que está incluído?</summary><p>A oferta apresenta cinco ebooks: Reset da Dopamina, Foco Profundo, Disciplina Sem Motivação, Sono de Alta Performance e Redes Sociais Sob Controle.</p></details>
+<details><summary>O método promete resultados iguais para todo mundo?</summary><p>Não. Os materiais propõem práticas e organização de hábitos, mas a experiência e os resultados variam de pessoa para pessoa. O conteúdo não substitui orientação profissional de saúde.</p></details>
+<details><summary>Como faço para acessar depois da compra?</summary><p>Consulte as instruções de acesso apresentadas pela Kiwify durante e após a compra. Verifique também o e-mail usado no pedido.</p></details>
+<details><summary>Quais são as condições de garantia e reembolso?</summary><p>Confira o prazo e as condições vigentes na página de pagamento antes de concluir a compra.</p></details>
+<details><summary>Em quais dispositivos posso ler os ebooks?</summary><p>Verifique o formato dos arquivos e as instruções de leitura informadas na página de compra. Leitores de PDF e outros formatos podem variar conforme o material fornecido.</p></details>
+</div>
+</section>
+<footer><p>Conteúdo educativo sobre hábitos, foco e organização da rotina. Não constitui aconselhamento médico ou psicológico e não promete resultados específicos. Consulte a página de pagamento para conferir preço e condições atualizadas.</p></footer>
 <script>
 (()=>{
 const NS="http://www.w3.org/2000/svg",W=1920,H=1080;
@@ -157,8 +214,8 @@ g.setAttribute("transform",`translate(${x} ${y}) rotate(${a}) scale(${w/98})`);w
 if(matchMedia("(prefers-reduced-motion:reduce)").matches)draw(4);
 else{const L=n=>{draw(n/1000%12);requestAnimationFrame(L)};requestAnimationFrame(L)}
 const b=document.querySelector(".menu");
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('open');b.setAttribute('aria-expanded','false')}));
-b.onclick=()=>{const o=document.body.classList.toggle("open");b.setAttribute("aria-expanded",o)};
+ document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menu')}));
+b.onclick=()=>{const o=document.body.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')};
 })();
 </script>
 </body>
