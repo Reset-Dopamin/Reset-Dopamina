@@ -13,7 +13,7 @@
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;background:#0a49ff;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.hero{position:relative;height:100dvh;min-height:600px;overflow:hidden;display:flex;flex-direction:column;padding:0 var(--pad);
+.hero{position:relative;min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;padding:0 var(--pad);
 background:radial-gradient(90% 70% at 85% 0,#4b92ff 0,transparent 65%),linear-gradient(180deg,#0a45f5 0,#1778ff 55%,#52acff 100%)}
 .hero::before{content:"";position:absolute;left:-12%;bottom:-9%;width:75%;height:26%;z-index:0;filter:blur(22px);
 background:radial-gradient(closest-side at 25% 60%,rgba(255,255,255,.7),transparent),radial-gradient(closest-side at 62% 70%,rgba(255,255,255,.5),transparent),radial-gradient(closest-side at 88% 55%,rgba(255,255,255,.35),transparent)}
@@ -36,21 +36,32 @@ h1 span{display:block}
 .act{display:flex;gap:12px}
 .price{margin-top:16px;font-size:15px;color:var(--cy)}
 .price s{opacity:.75}.price b{color:#fff;font-weight:600}
-.ids{margin-top:auto;padding-bottom:max(40px,env(safe-area-inset-bottom));color:var(--cy)}
+.ids{margin-top:auto;padding:32px 0 max(36px,env(safe-area-inset-bottom));color:var(--cy)}
 .ids p{font-size:13px;margin-bottom:12px;opacity:.9}
-#modulos:target{outline:1px solid var(--line);outline-offset:10px;border-radius:16px}
-.ids ul{list-style:none;display:flex;gap:clamp(14px,2.2vw,30px);font-size:15px;text-shadow:0 1px 8px rgba(5,25,120,.5)}
-.ids li{display:flex;align-items:center;gap:8px;white-space:nowrap}
-.ids svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5}
+.ids ul{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:640px}
+.ids a{display:block;font-size:13px;text-shadow:0 1px 8px rgba(5,25,120,.5)}
+.ids img,.ebooks img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);border-radius:8px;background:#0b1a6a}
+.ids img{margin-bottom:6px;box-shadow:0 6px 18px rgba(5,25,120,.35)}
+.ids a:hover img{border-color:#fff}
+html{scroll-behavior:smooth}
+.ebooks{padding:clamp(56px,8vw,110px) var(--pad);background:#0b3fe0}
+.ebooks h2{font-weight:400;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.1}
+.ebooks .sub{margin:12px 0 36px;color:var(--cy);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px;max-width:1200px}
+.ebooks article{scroll-margin-top:24px}
+.ebooks article:target img{outline:2px solid #fff;outline-offset:4px}
+.ebooks h3{font-weight:500;font-size:20px;margin:14px 0 6px}
+.ebooks article p{color:var(--cy);line-height:1.5;font-size:15px;max-width:34ch}
+.ebooks .act{margin-top:44px}
 .long{display:none}
 @media(min-width:821px){.long{display:inline}}
 @media(max-width:820px){
+.ids a{font-size:11px}.ids ul{gap:6px}
 nav,.hdr-cta{display:none}.menu{display:inline-flex}
 .open nav{display:flex;flex-direction:column;gap:14px;position:absolute;z-index:5;top:72px;right:var(--pad);padding:18px 22px;border:1px solid var(--line);border-radius:20px;background:rgba(8,40,170,.9)}
 .copy{margin-top:calc(32dvh - 76px)}
 .desc{font-size:15px;margin-bottom:22px}
 .price{font-size:14px}
-.ids ul{gap:10px;font-size:12px}.ids svg{width:14px;height:14px}.ids li{gap:5px}
 }
 @media(max-aspect-ratio:1/1){#mass{inset:auto -6% 0 auto;width:106%;height:30dvh}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
@@ -69,7 +80,7 @@ nav,.hdr-cta{display:none}.menu{display:inline-flex}
 <svg id="fly" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
 <header>
 <a class="brand" href="#" aria-label="Reset da Dopamina"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 1 23 12 12 23 1 12Z"/><path d="M12 7 17 12 12 17 7 12Z" fill="#0a49ff"/></svg>Reset da Dopamina</a>
-<nav aria-label="Principal"><a href="#modulos">Reset</a><a href="#modulos">Foco</a><a href="#modulos">Disciplina</a><a href="#modulos">Sono</a><a href="#modulos">Redes</a></nav>
+<nav aria-label="Principal"><a href="#reset">Reset</a><a href="#foco">Foco</a><a href="#disciplina">Disciplina</a><a href="#sono">Sono</a><a href="#redes">Redes</a></nav>
 <a class="pill w hdr-cta" href="https://pay.kiwify.com.br/eCQ6E96" target="_blank" rel="noopener">Quero o Reset</a>
 <button class="menu" aria-label="Abrir menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
 </header>
@@ -79,21 +90,33 @@ nav,.hdr-cta{display:none}.menu{display:inline-flex}
 <p class="desc">Um passo a passo para desintoxicar, reconstruir o foco e criar disciplina, sem depender de motivação.</p>
 <div class="act">
 <a class="pill w" href="https://pay.kiwify.com.br/eCQ6E96" target="_blank" rel="noopener">Quero o Reset<span class="long">&nbsp;por R$ 27,99</span></a>
-<a class="pill k" href="#modulos">Ver conteúdo</a>
+<a class="pill k" href="#ebooks">Ver conteúdo</a>
 </div>
 <p class="price"><s>De R$ 52,99</s> por <b>R$ 27,99</b></p>
 </section>
-<section class="ids" id="modulos">
-<p>Os 5 ebooks do método</p>
+<section class="ids" aria-label="Os 5 ebooks do método">
 <ul>
-<li title="Reset da Dopamina"><svg><use href="#m1"/></svg>Reset</li>
-<li title="Foco Profundo"><svg><use href="#m4"/></svg>Foco</li>
-<li title="Disciplina Sem Motivação"><svg><use href="#m2"/></svg>Disciplina</li>
-<li title="Sono de Alta Performance"><svg><use href="#m3"/></svg>Sono</li>
-<li title="Redes Sociais Sob Controle"><svg><use href="#m5"/></svg>Redes</li>
+<li><a href="#reset"><img src="modulo1.jpg" alt="Capa do ebook Reset da Dopamina" loading="lazy">Reset</a></li>
+<li><a href="#foco"><img src="modulo2.jpg" alt="Capa do ebook Foco Profundo" loading="lazy">Foco</a></li>
+<li><a href="#disciplina"><img src="modulo4.jpg" alt="Capa do ebook Disciplina Sem Motivação" loading="lazy">Disciplina</a></li>
+<li><a href="#sono"><img src="modulo3.jpg" alt="Capa do ebook Sono de Alta Performance" loading="lazy">Sono</a></li>
+<li><a href="#redes"><img src="modulo5.jpg" alt="Capa do ebook Redes Sociais Sob Controle" loading="lazy">Redes</a></li>
 </ul>
 </section>
 </main>
+<section class="ebooks" id="ebooks">
+<h2>Os 5 ebooks do método</h2>
+<p class="sub">Siga a ordem: cada etapa prepara a próxima.</p>
+<div class="grid">
+<article id="reset"><img src="modulo1.jpg" alt="Capa do ebook Reset da Dopamina" loading="lazy"><h3>Reset da Dopamina</h3><p>7 dias para desintoxicar do scroll, reconstruir o foco e consolidar a rotina.</p></article>
+<article id="foco"><img src="modulo2.jpg" alt="Capa do ebook Foco Profundo" loading="lazy"><h3>Foco Profundo</h3><p>Ambiente de foco, 3 blocos diários de trabalho profundo e plano de 30, 60 e 90 dias.</p></article>
+<article id="disciplina"><img src="modulo4.jpg" alt="Capa do ebook Disciplina Sem Motivação" loading="lazy"><h3>Disciplina Sem Motivação</h3><p>Regra dos 2 minutos, microações e gatilhos de ação para agir sem esperar motivação.</p></article>
+<article id="sono"><img src="modulo3.jpg" alt="Capa do ebook Sono de Alta Performance" loading="lazy"><h3>Sono de Alta Performance</h3><p>Rotina noturna, horário certo da cafeína e uma manhã que ancora o relógio biológico.</p></article>
+<article id="redes"><img src="modulo5.jpg" alt="Capa do ebook Redes Sociais Sob Controle" loading="lazy"><h3>Redes Sociais Sob Controle</h3><p>Janelas fixas de uso, curadoria do feed e auditoria semanal para usar sem recair.</p></article>
+</div>
+<div class="act"><a class="pill w" href="https://pay.kiwify.com.br/eCQ6E96" target="_blank" rel="noopener">Quero o Reset por R$ 27,99</a></div>
+<p class="price"><s>De R$ 52,99</s> por <b>R$ 27,99</b></p>
+</section>
 <script>
 (()=>{
 const NS="http://www.w3.org/2000/svg",W=1920,H=1080;
@@ -133,6 +156,7 @@ g.setAttribute("transform",`translate(${x} ${y}) rotate(${a}) scale(${w/98})`);w
 if(matchMedia("(prefers-reduced-motion:reduce)").matches)draw(4);
 else{const L=n=>{draw(n/1000%12);requestAnimationFrame(L)};requestAnimationFrame(L)}
 const b=document.querySelector(".menu");
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('open');b.setAttribute('aria-expanded','false')}));
 b.onclick=()=>{const o=document.body.classList.toggle("open");b.setAttribute("aria-expanded",o)};
 })();
 </script>
