@@ -65,7 +65,38 @@ html{scroll-behavior:smooth}
 .video-section{background:#0b3fe0}
 .video-wrap{max-width:960px;margin:28px auto 0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#07194f;box-shadow:0 20px 50px rgba(0,0,0,.2)}
 .video-wrap video{display:block;width:100%;max-height:72vh;background:#07194f}
-.video-note{max-width:960px;margin:12px auto 0;color:var(--cy);font-size:13px;line-height:1.5}
+.story{padding:clamp(48px,7vw,80px) var(--pad);background:#092fbd;text-align:center}
+.story h2{font-weight:400;font-size:clamp(26px,4vw,42px);letter-spacing:-.02em;line-height:1.1}
+.story-lead{max-width:620px;margin:12px auto 0;color:var(--cy);font-size:16px;line-height:1.6}
+.story-stage{position:relative;display:grid;place-items:center;isolation:isolate;overflow:hidden;max-width:960px;height:clamp(260px,42vw,390px);margin:28px auto 0;border:1px solid var(--line);border-radius:18px;background:radial-gradient(ellipse at 50% 90%,rgba(79,157,255,.45),transparent 60%),linear-gradient(145deg,#082a91,#071d68);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.story-stage::after{content:"";position:absolute;z-index:-1;width:55%;height:1px;bottom:22%;background:#8acfff;filter:blur(18px);opacity:.8}
+.phone{position:absolute;z-index:2;width:132px;height:250px;padding:7px;border:3px solid #dce5f3;border-radius:29px;background:#111827;box-shadow:0 18px 45px rgba(0,0,0,.45),inset 0 0 0 2px #414b5b;animation:phone-to-book 8s ease-in-out infinite}
+.phone-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:19px;padding:28px 11px 12px;background:linear-gradient(160deg,#172b59,#10182e 70%);text-align:left}
+.phone-screen::before{content:"";position:absolute;z-index:3;top:7px;left:50%;width:48px;height:13px;transform:translateX(-50%);border-radius:99px;background:#05070c}
+.screen-status{display:flex;justify-content:space-between;color:#fff;font-size:7px;font-weight:700;margin-bottom:16px}
+.screen-card{height:78px;padding:9px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:linear-gradient(135deg,#7358f2,#3886ff);color:white;font-size:9px;font-weight:700;box-shadow:0 6px 15px rgba(0,0,0,.2)}
+.screen-card::after{content:"";display:block;width:72%;height:24px;margin-top:8px;border-radius:5px;background:linear-gradient(135deg,rgba(255,255,255,.68),rgba(255,255,255,.12))}
+.screen-line{display:block;height:6px;margin-top:10px;border-radius:5px;background:rgba(255,255,255,.32)}
+.screen-line.short{width:62%;margin-top:6px}
+.screen-dock{display:flex;gap:8px;margin-top:17px}
+.screen-dock i{display:block;width:21px;height:21px;border-radius:6px;background:#59c6ff}
+.screen-dock i:nth-child(2){background:#f9759b}.screen-dock i:nth-child(3){background:#a78bfa}.screen-dock i:nth-child(4){background:#fbbf58}
+.screen-off{position:absolute;inset:0;z-index:2;border-radius:19px;background:#020308;opacity:0;animation:screen-shutdown 8s ease-in-out infinite}
+.open-book{position:absolute;z-index:1;width:min(72%,440px);height:180px;display:flex;opacity:0;transform:perspective(700px) rotateY(-24deg) scale(.72);filter:drop-shadow(0 18px 15px rgba(0,0,0,.28));animation:book-open 8s ease-in-out infinite}
+.book-page{position:relative;width:50%;height:100%;overflow:hidden;border:1px solid #e4d5b3;background:linear-gradient(100deg,#f5e9cf,#fffaf0 24%,#fffdf6);box-shadow:inset 0 -8px 12px rgba(132,91,43,.1)}
+.book-page.left{border-radius:14px 3px 4px 12px;transform:skewY(2deg);transform-origin:right center}
+.book-page.right{border-radius:3px 14px 12px 4px;transform:skewY(-2deg);transform-origin:left center}
+.book-page i{display:block;width:68%;height:4px;margin:24px auto 0;border-radius:3px;background:#b59b72;opacity:.52}
+.book-page i+i{margin-top:11px;width:74%;opacity:.35}
+.book-page i:last-child{width:48%;margin-left:16%}
+.book-cover{position:absolute;z-index:-1;left:-5px;right:-5px;bottom:-7px;height:13px;border-radius:0 0 8px 8px;background:#8c572e;box-shadow:0 3px 0 #59361f}
+.book-spine{position:absolute;z-index:2;left:50%;top:2px;bottom:1px;width:5px;transform:translateX(-50%);border-radius:50%;background:linear-gradient(90deg,#b58b58,#fff3d9,#b58b58)}
+.page-turn{position:absolute;z-index:3;left:50%;top:1px;width:50%;height:98%;transform-origin:left center;border:1px solid #e4d5b3;border-radius:2px 12px 10px 2px;background:linear-gradient(90deg,#e9d9bb,#fffdf6 18%,#f8edd8);box-shadow:2px 2px 7px rgba(80,53,26,.18);backface-visibility:hidden;animation:page-flip 1.15s ease-in-out 3.7s infinite}
+.page-turn::after{content:"";position:absolute;inset:22px 15px;background:repeating-linear-gradient(to bottom,transparent 0 12px,rgba(155,126,84,.32) 12px 13px);transform:scaleX(-1);opacity:.7}
+@keyframes phone-to-book{0%,15%{opacity:1;transform:translateY(0) scale(1) rotate(0)}26%{opacity:1;transform:translateY(4px) scale(.96) rotate(-3deg)}39%,88%{opacity:0;transform:translateY(12px) scale(.72) rotate(-12deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@keyframes screen-shutdown{0%,18%{opacity:0}30%,91%{opacity:1}100%{opacity:0}}
+@keyframes book-open{0%,34%{opacity:0;transform:perspective(700px) rotateY(-24deg) scale(.72)}48%,81%{opacity:1;transform:perspective(700px) rotateY(0) scale(1)}92%,100%{opacity:0;transform:perspective(700px) rotateY(12deg) scale(.88)}}
+@keyframes page-flip{0%,12%{transform:rotateY(0);z-index:3}48%{transform:rotateY(-178deg);z-index:3}49%,100%{transform:rotateY(0);z-index:1}}
 .how{background:#0836c7}
 .how h2,.faq h2,.video-section h2{font-weight:400;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.1}
 .section-lead{margin:12px 0 32px;color:var(--cy);font-size:16px;line-height:1.6;max-width:680px}
@@ -80,6 +111,8 @@ html{scroll-behavior:smooth}
 .faq details p{padding:12px 28px 0 0}
 footer{padding:28px var(--pad);background:#082fae;color:var(--cy);font-size:13px;line-height:1.6}
 footer p{max-width:1000px}
+@media(max-width:520px){.phone{width:112px;height:214px}.open-book{height:145px}.book-page i{margin-top:19px}.book-page i+i{margin-top:9px}}
+@media(prefers-reduced-motion:reduce){.phone,.screen-off,.open-book,.page-turn{animation:none!important}.phone{display:none}.screen-off{opacity:0}.open-book{opacity:1;transform:none}.page-turn{display:none}}
 @media(max-width:820px),(max-aspect-ratio:1/1){
 .ids a{font-size:11px}.ids ul{gap:6px}
 nav,.hdr-cta{display:none}.menu{display:inline-flex}
@@ -139,7 +172,26 @@ header{flex-wrap:wrap}
 Seu navegador não conseguiu reproduzir o vídeo. Tente abrir esta página em outro navegador.
 </video>
 </div>
-<p class="video-note">Para adicionar seu vídeo, envie o arquivo com o nome <strong>apresentacao.mp4</strong> para a mesma pasta deste arquivo index.html.</p>
+</section>
+<section class="story" aria-labelledby="story-title">
+<h2 id="story-title">Da tela à leitura</h2>
+<p class="story-lead">Quando o celular se apaga, sobra espaço para abrir um livro e recuperar o foco.</p>
+<div class="story-stage" role="img" aria-label="Animação em loop: um celular escurece e desaparece, dando lugar a um livro aberto com páginas virando.">
+<div class="phone" aria-hidden="true">
+<div class="phone-screen">
+<div class="screen-status"><span>9:41</span><span>● ▰</span></div>
+<div class="screen-card">PARA VOCÊ</div>
+<span class="screen-line"></span><span class="screen-line short"></span>
+<div class="screen-dock"><i></i><i></i><i></i><i></i></div>
+<div class="screen-off"></div>
+</div>
+</div>
+<div class="open-book" aria-hidden="true">
+<div class="book-page left"><i></i><i></i><i></i><i></i></div>
+<div class="book-page right"><i></i><i></i><i></i><i></i></div>
+<span class="book-cover"></span><span class="book-spine"></span><span class="page-turn"></span>
+</div>
+</div>
 </section>
 <section class="how" aria-labelledby="how-title">
 <h2 id="how-title">Como funciona o método</h2>
